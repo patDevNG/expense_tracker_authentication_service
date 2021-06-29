@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { SignUpController } from './signup'
 import { MissingParamsError, InvalidParamsError, ServerError } from '../error'
-import { EmailValidator } from '../protocol/email-validator'
+import { EmailValidator } from '../protocol/'
 
 interface sutTypes {
   sut: SignUpController

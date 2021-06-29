@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "testing":"jest",
     "test": "eslint 'src/**' --fix && jest",
     "prepare": "husky install"
   },
