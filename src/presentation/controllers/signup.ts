@@ -1,11 +1,9 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { HttpRequest, HttpResponse } from '../protocol/http'
-import { MissingParamsError } from '../error/missing-param-error'
-import { badRequest } from '../helpers/http-helper'
+import { badRequest, serverError } from '../helpers/http-helper'
 import { Controller } from '../protocol/controller'
 import { EmailValidator } from '../protocol/email-validator'
-import { InvalidParamsError } from '../error'
-import { ServerError } from '../error/server-error'
+import { InvalidParamsError, MissingParamsError } from '../error'
 
 export class SignUpController implements Controller {
   private readonly emailValidator: EmailValidator
@@ -31,10 +29,7 @@ export class SignUpController implements Controller {
         body: 'Ok'
       }
     } catch (error) {
-      return {
-        statusCode: 500,
-        body: new ServerError()
-      }
+      return serverError()
     }
   }
 }
