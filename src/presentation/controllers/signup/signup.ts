@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { HttpRequest, HttpResponse } from '../protocol/http'
-import { badRequest, serverError } from '../helpers/http-helper'
-import { Controller, EmailValidator } from '../protocol'
-import { InvalidParamsError, MissingParamsError } from '../error'
-import { IAddAccount } from '../../domain/usecase/add-account'
+import { HttpRequest, HttpResponse, Controller, EmailValidator, IAddAccount } from './signup-protocol'
+import { badRequest, serverError } from '../../helpers/http-helper'
+import { InvalidParamsError, MissingParamsError } from '../../error'
 
 export class SignUpController implements Controller {
   private readonly emailValidator: EmailValidator

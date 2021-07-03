@@ -1,10 +1,9 @@
 
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { SignUpController } from './signup'
-import { MissingParamsError, InvalidParamsError, ServerError } from '../error'
-import { EmailValidator } from '../protocol/'
-import { IAddAccount, IAddAccountModel } from '../../domain/usecase/add-account'
-import { IAccountModel } from '../../domain/models/account'
+import { MissingParamsError, InvalidParamsError, ServerError } from '../../error'
+import { IAddAccount, IAddAccountModel, EmailValidator, IAccountModel} from './signup-protocol'
+
 interface sutTypes {
   sut: SignUpController
   emailValidatorStub: EmailValidator
